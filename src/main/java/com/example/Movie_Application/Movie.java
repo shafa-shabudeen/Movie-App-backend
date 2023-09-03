@@ -29,4 +29,8 @@ public class Movie {
     @DocumentReference
     private List<Review> reviewIds;
 
+    @DocumentReference
+    private List<WatchList> watchListIds;
+
+
 }
