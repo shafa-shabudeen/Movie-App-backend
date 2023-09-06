@@ -7,6 +7,8 @@ import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.Optional;
+
 @Document(collection = "watchlist")
 @Data
 @AllArgsConstructor
@@ -23,5 +25,4 @@ public class WatchList {
         this.userEmail = userEmail;
         this.clerkId = clerkId;
     }
-
 }

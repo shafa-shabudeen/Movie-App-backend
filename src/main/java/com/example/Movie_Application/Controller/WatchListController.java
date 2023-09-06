@@ -6,11 +6,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/watchLists")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin("http://localhost:3000")
 public class WatchListController {
 
     @Autowired
@@ -28,6 +30,12 @@ public class WatchListController {
 
         return new ResponseEntity<WatchList>(createdWatchListItem, HttpStatus.CREATED);
     }
+
+    @GetMapping("/{clerkId}")
+    public ResponseEntity<List<WatchList>> getWatchListByClerkId(@PathVariable String clerkId){
+        return  new ResponseEntity<List<WatchList>>(watchListServices.getWatchListByClerkId(clerkId),HttpStatus.OK);
+    }
+
 
 
 }
