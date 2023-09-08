@@ -27,14 +27,16 @@ Make sure you have Java and Maven installed on your machine.
 ### Installation
 
 1. Clone this repository to your local machine:
-
+   ```
    git clone https://github.com/your-username/movie-application.git
 
 2. Navigate to the root directory of this project (where your Spring Boot project is located).
 
 3. Build the Spring Boot application using the following Maven command:
    
-    mvn clean install
+  ```
+     mvn clean install
+ ```
    
 ### Running the Application
 
