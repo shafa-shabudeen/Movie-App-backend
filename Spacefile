@@ -1,0 +1,6 @@
+v: 0
+micros:
+  - name: backend
+    src: ./src
+    engine: custom
+    run: mvn clean spring-boot:run -f ../pom.xml
