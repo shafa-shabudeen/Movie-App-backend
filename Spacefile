@@ -1,4 +1,11 @@
 v: 0
+
+dependencies:
+  - maven:
+      artifacts:
+        - group: org.springframework.boot
+          artifact: spring-boot-starter-web
+          version: 2.6.7
 micros:
   - name: backend
     src: ./src
