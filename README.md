@@ -46,3 +46,5 @@ After the build is successful, you can run the Spring Boot application with the 
     java -jar target/movie-application.jar
     
 The backend server will start, and it will be accessible at the configured port (usually http://localhost:8080 unless you've changed it in the application.properties file).
+
+Link to Front End code is <a href="https://github.com/shafa-shabudeen/MovieFrontEnd.git">here</a>
