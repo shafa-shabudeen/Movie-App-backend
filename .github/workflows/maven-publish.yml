@@ -29,6 +29,13 @@ jobs:
         server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
         settings-path: ${{ github.workspace }} # location for the settings.xml file
 
+    - name: Set up Environment Variables
+      run: echo "MONGO_DATABASE=${{ secrets.MONGO_DATABASE }}" >> $GITHUB_ENV
+    - run: echo "MONGO_USER=${{ secrets.MONGO_USER }}" >> $GITHUB_ENV
+    - run: echo "MONGO_PASSWORD=${{ secrets.MONGO_PASSWORD }}" >> $GITHUB_ENV
+    - run: echo "MONGO_CLUSTER=${{ secrets.MONGO_CLUSTER }}" >> $GITHUB_ENV
+
+
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
@@ -36,5 +43,4 @@ jobs:
       run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
       env:
         GITHUB_TOKEN: ${{ github.token }}
-        MONGODB_URI: ${{ secrets.MONGODB_URI }}
-        MONGODB_DATABASE: ${{ secrets.MONGODB_DATABASE }}
+        SPRING_CONFIG_LOCATION: "file:./src/main/resources/application.properties"
